@@ -63,7 +63,7 @@ def dataload(path_to_images, img_size=640):
                                 else:
                                     print('list_of_labels_another_image', list_of_labels.shape)
                                     print('list_of_labels_local', list_of_labels_local.shape)
-                                    list_of_labels = np.concatenate((list_of_labels, np.expand_dims(list_of_labels_local, axis=0)), axis=0)
+                                    list_of_labels = np.append(list_of_labels, np.expand_dims(list_of_labels_local, axis=0), axis=1)
                     else:
                         list_of_broken_images.append(folder1 + name + '.' + extension)
                 else:
