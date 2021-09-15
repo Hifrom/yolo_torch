@@ -19,8 +19,10 @@ image = image.permute(2, 0, 1).unsqueeze(0).to(device)
 # === dataset loader ===
 path = os.path.join('./data/')
 imgsz = 224
-dataset = dataload(path_to_images=path, img_size=224)
-
+images, labels = dataload(path_to_images=path, img_size=224)
+print(images.shape)
+print(labels.shape)
+print(labels)
 # === model ===
 model = yolov4()
 model.to(device)
